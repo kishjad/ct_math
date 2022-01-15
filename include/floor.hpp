@@ -9,7 +9,7 @@ namespace floor_operator{
     }
 
     template <typename T>
-    constexpr T floor_check(T a) noexcept{
+    constexpr T floor_check(const T a) noexcept{
         if constexpr(std::is_integral<T>::value){
             return T(static_cast<long long int>(a));
         }
@@ -21,6 +21,6 @@ namespace floor_operator{
 template<typename T>
 constexpr auto replace_floor(const T x) -> const T
 {
-    return ct_math::floor_check( static_cast<T>(x) );
+    return floor_operator::floor_check( static_cast<T>(x) );
 }
-#endif
+#endif 
