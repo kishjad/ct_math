@@ -8,6 +8,14 @@ SCENARIO("Check constexpr floor values")
     {
         constexpr float val1 = 10.35; 
         CHECK(ct_math::floor(val1) == std::floor(val1));
-        // CHECK(ct_math::internal_use::is_constant_evaluated(ct_math::floor(val1)));
+    }
+};
+
+SCENARIO("Check constexpr ceil values")
+{
+    GIVEN("Floating values")
+    {
+        constexpr float val1 = 10.35; 
+        CHECK(ct_math::ceil(val1) == std::ceil(val1));
     }
 }
