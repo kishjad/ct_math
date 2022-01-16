@@ -7,13 +7,13 @@ namespace ceil_operator{
 
     template <typename T>
     constexpr int checkOperator (const T a){
-        return ( ( (a<T(0)) && (T(static_cast<long long int>(a)) != a)) ? 1 : 0);
+        return ( ( (a>T(0)) && (T(static_cast<long long int>(a)) != a)) ? 1 : 0);
     }
 
     template <typename T>
-    constexpr T floor_check(const T a) noexcept{
-        static_assert(std::is_arithmetic_v<T>, "Invalid argument to floor");
-        static_assert(internal_use::is_constant_evaluated(), "floor is not constexpr");
+    constexpr T ceil_check(const T a) noexcept{
+        static_assert(std::is_arithmetic_v<T>, "Invalid argument to ceil");
+        static_assert(internal_use::is_constant_evaluated(), "ceil is not constexpr");
         if (internal_use::is_value_nan(a)) {
             return std::numeric_limits<T>::quiet_NaN();
         }
@@ -31,6 +31,6 @@ namespace ceil_operator{
 template<typename T>
 constexpr auto ceil(const T x) -> const T
 {
-    return ceil_operator::ciel_check( static_cast<T>(x) );
+    return ceil_operator::ceil_check( static_cast<T>(x) );
 }
 #endif 

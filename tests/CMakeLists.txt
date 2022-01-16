@@ -5,10 +5,10 @@ include_directories(
     ${PROJECT_SOURCE_DIR}/ext/Catch2
 )
 
-add_executable(test_floor
-    floor_test.cpp
+add_executable(test_functions
+    function_tests.cpp
 )
 
-target_link_libraries(test_floor
+target_link_libraries(test_functions
     catch_main
 )
