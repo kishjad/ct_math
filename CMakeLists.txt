@@ -18,7 +18,7 @@ set(LIB_OUTPUT_PATH ${BUILD_OUTPUT_PATH}/lib)
 
 file(MAKE_DIRECTORY ${BUILD_OUTPUT_PATH})
 file(MAKE_DIRECTORY ${LIB_OUTPUT_PATH})
-add_definitions(-B${BUILD_OUTPUT_PATH})
+
 #
 
 # file(STRINGS "${GCEM_INCLUDE_DIR}/gcem_incl/gcem_options.hpp" gcem_version_defines
