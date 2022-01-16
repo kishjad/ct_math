@@ -7,7 +7,7 @@ namespace ceil_operator{
 
     template <typename T>
     constexpr int checkOperator (const T a){
-        return ( ( (a<T(0)) && (T(static_cast<long long int>(a)) != a)) ? 1 : 0);
+        return ( ( (a>T(0)) && (T(static_cast<long long int>(a)) != a)) ? 1 : 0);
     }
 
     template <typename T>

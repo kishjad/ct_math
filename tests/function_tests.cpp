@@ -6,8 +6,10 @@ SCENARIO("Check constexpr floor values")
 {
     GIVEN("Floating values")
     {
-        constexpr float val1 = 10.35; 
-        CHECK(ct_math::floor(val1) == std::floor(val1));
+        CHECK(ct_math::floor(10.35) == std::floor(10.35));
+        CHECK(ct_math::floor(-10.35) == std::floor(-10.35));
+        CHECK(ct_math::floor(-10) == std::floor(-10));
+        CHECK(ct_math::floor(10.) == std::floor(10.));
     }
 };
 
@@ -15,7 +17,9 @@ SCENARIO("Check constexpr ceil values")
 {
     GIVEN("Floating values")
     {
-        constexpr float val1 = 10.35; 
-        CHECK(ct_math::ceil(val1) == std::ceil(val1));
+        CHECK(ct_math::ceil(10.35) == std::ceil(10.35));
+        CHECK(ct_math::ceil(-10.35) == std::ceil(-10.35));
+        CHECK(ct_math::ceil(-10) == std::ceil(-10));
+        CHECK(ct_math::ceil(10.) == std::ceil(10.));
     }
 }
