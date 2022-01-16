@@ -14,13 +14,14 @@ namespace floor_operator{
     constexpr T floor_check(const T a) noexcept{
         static_assert(std::is_arithmetic_v<T>, "Invalid argument to floor");
 
-        if constexpr(internal_use::is_value_nan(a)) {
-            return std::numeric_limits<T>::quiet_NaN();
-        }
-        else if constexpr(internal_use::is_value_inf(a)){
-            return a;
-        }
-        else(std::is_integral<T>::value){
+        // if constexpr(internal_use::is_value_nan(a)) {
+        //     return std::numeric_limits<T>::quiet_NaN();
+        // }
+        // else if constexpr(internal_use::is_value_inf(a)){
+        //     return a;
+        // }
+        // else 
+        if constexpr(std::is_integral<T>::value){
             return T(static_cast<long long int>(a));
         }
         return T(static_cast<long long int>(a - (checkOperator<T>(a)) ));

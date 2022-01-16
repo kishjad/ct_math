@@ -47,6 +47,6 @@ target_include_directories(ct_math INTERFACE $<BUILD_INTERFACE:${CT_MATH_INCLUDE
 OPTION(CT_MATH_TESTS "test suite" ON)
 
 if(CT_MATH_TESTS)
-    # add_subdirectory(tests)
+    add_subdirectory(tests)
     add_subdirectory(ext)
 endif()
