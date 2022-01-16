@@ -20,8 +20,8 @@ namespace trunc_operator{
 
 
 template<typename T>
-constexpr auto trunc(const T x) -> const T
+constexpr auto trunc(const T x) -> typename std::conditional<std::is_integral_v<T>, double, T>::type
 {
-    return trunc_operator::trunc_check( static_cast<T>(x) );
+    return trunc_operator::trunc_check( static_cast<typename std::conditional<std::is_integral_v<T>, double, T>::type>(x) );
 }
 #endif 

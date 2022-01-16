@@ -29,8 +29,8 @@ namespace ceil_operator{
 
 
 template<typename T>
-constexpr auto ceil(const T x) -> const T
+constexpr auto ceil(const T x) -> typename std::conditional<std::is_integral_v<T>, double, T>::type
 {
-    return ceil_operator::ceil_check( static_cast<T>(x) );
+    return ceil_operator::ceil_check( static_cast<typename std::conditional<std::is_integral_v<T>, double, T>::type>(x) );
 }
 #endif 

@@ -29,8 +29,8 @@ namespace floor_operator{
 
 
 template<typename T>
-constexpr auto floor(const T x) -> const T
+constexpr auto floor(const T x) -> typename std::conditional<std::is_integral_v<T>, double, T>::type
 {
-    return floor_operator::floor_check( static_cast<T>(x) );
+    return floor_operator::floor_check( static_cast<typename std::conditional<std::is_integral_v<T>, double, T>::type>(x) );
 }
 #endif 
