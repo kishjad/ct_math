@@ -33,7 +33,7 @@
 
 
 # Build Folder
-build/
+build/**
 
 #IDE folders
 .vscode/
