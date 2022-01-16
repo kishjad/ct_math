@@ -5,10 +5,8 @@ include_directories(
     ${PROJECT_SOURCE_DIR}/ext/Catch2
 )
 
-add_executable(test_functions
-    function_tests.cpp
-)
+add_executable(rounding_and_remainder rounding_and_remainder.cpp)
 
-target_link_libraries(test_functions
+target_link_libraries(rounding_and_remainder
     catch_main
 )
