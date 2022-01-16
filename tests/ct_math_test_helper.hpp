@@ -1,4 +1,4 @@
-#ifndef TEST_HELPER_HPP
+#ifndef COMPARSIONS_HPP
 #define COMPARSIONS_HPP
 #include <math.h>
 #include <limits>
