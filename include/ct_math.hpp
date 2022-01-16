@@ -2,7 +2,8 @@
 #define CT_MATH_HPP
 
 namespace ct_math {
-#include <floor.hpp>
+    #include <helper_functions.hpp>
+    #include <floor.hpp>
 // #include <ceil.hpp>
 }
 #endif
