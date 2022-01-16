@@ -1,9 +1,9 @@
 
-#ifndef CT_MATH_FLOOR_HPP
-#define CT_MATH_FLOOR_HPP
+#ifndef CT_MATH_CEIL_HPP
+#define CT_MATH_CEIL_HPP
 #include <helper_functions.hpp>
 
-namespace floor_operator{
+namespace ceil_operator{
 
     template <typename T>
     constexpr int checkOperator (const T a){
@@ -11,8 +11,8 @@ namespace floor_operator{
     }
 
     template <typename T>
-    constexpr T floor_check(const T a) noexcept{
-        static_assert(std::is_arithmetic_v<T>, "Invalid argument to floor");
+    constexpr T ciel_check(const T a) noexcept{
+        static_assert(std::is_arithmetic_v<T>, "Invalid argument to ceil");
 
         if constexpr(internal_use::is_value_nan(a)) {
             return std::numeric_limits<T>::quiet_NaN();
@@ -23,14 +23,14 @@ namespace floor_operator{
         else(std::is_integral<T>::value){
             return T(static_cast<long long int>(a));
         }
-        return T(static_cast<long long int>(a - (checkOperator<T>(a)) ));
+        return T(static_cast<long long int>(a + (checkOperator<T>(a)) ));
     }
 };
 
 
 template<typename T>
-constexpr auto floor(const T x) -> const T
+constexpr auto ceil(const T x) -> const T
 {
-    return floor_operator::floor_check( static_cast<T>(x) );
+    return ceil_operator::ciel_check( static_cast<T>(x) );
 }
 #endif 
