@@ -5,5 +5,6 @@ namespace ct_math {
     #include <helper_functions.hpp>
     #include <floor.hpp>
     #include <ceil.hpp>
+    #include <trunc.hpp>
 }
 #endif
