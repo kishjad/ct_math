@@ -1,1 +1,2 @@
-include_directories(Catch2)
+add_subdirectory(Catch2)
+message("IN ext")
