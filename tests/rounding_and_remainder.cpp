@@ -46,3 +46,18 @@ SCENARIO("Check constexpr trunc values")
         CHECK( std::isnan(static_cast<float>( (ct_math::trunc( std::numeric_limits<float>::quiet_NaN()) ))) );
     }
 }
+
+SCENARIO("Check constexpr round values")
+{
+    GIVEN("Floating values")
+    {
+        CHECK(ct_math::round(10.35) == std::round(10.35));
+        CHECK(ct_math::round(-10.35) == std::round(-10.35));
+        CHECK(ct_math::round(-10) == std::round(-10));
+        CHECK(ct_math::round(10.) == std::round(10.));
+        CHECK(approximatelyEqual(ct_math::round(-std::numeric_limits<long double>::infinity()), std::round( -std::numeric_limits<long double>::infinity()))  );
+        CHECK(approximatelyEqual(ct_math::round( std::numeric_limits<long double>::infinity()) , std::round( std::numeric_limits<long double>::infinity()))  );
+        CHECK( std::isnan(static_cast<long double>( (ct_math::round( std::numeric_limits<long double>::quiet_NaN()) ))) );
+        CHECK( std::isnan(static_cast<float>( (ct_math::round( std::numeric_limits<float>::quiet_NaN()) ))) );
+    }
+}

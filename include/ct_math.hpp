@@ -6,5 +6,6 @@ namespace ct_math {
     #include <floor.hpp>
     #include <ceil.hpp>
     #include <trunc.hpp>
+    #include <round.hpp>
 }
 #endif
