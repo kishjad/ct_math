@@ -61,3 +61,29 @@ SCENARIO("Check constexpr round values")
         CHECK( std::isnan(static_cast<float>( (ct_math::round( std::numeric_limits<float>::quiet_NaN()) ))) );
     }
 }
+
+SCENARIO("Check constexpr llround values")
+{
+    GIVEN("Floating values")
+    {
+        CHECK(ct_math::llround(10.35) == std::llround(10.35));
+        CHECK(ct_math::llround(-10.35) == std::llround(-10.35));
+        CHECK(ct_math::llround(-10) == std::llround(-10));
+        CHECK(ct_math::llround(10.) == std::llround(10.));
+        CHECK(ct_math::llround(-std::numeric_limits<long double>::infinity()) ==  std::llround( -std::numeric_limits<long double>::infinity()) );
+        CHECK(ct_math::llround( std::numeric_limits<long double>::infinity()) ==  std::llround( std::numeric_limits<long double>::infinity()) );
+    }
+}
+
+SCENARIO("Check constexpr lround values")
+{
+    GIVEN("Floating values")
+    {
+        CHECK(ct_math::lround(10.35) == std::lround(10.35));
+        CHECK(ct_math::lround(-10.35) == std::lround(-10.35));
+        CHECK(ct_math::lround(-10) == std::lround(-10));
+        CHECK(ct_math::lround(10.) == std::lround(10.));
+        CHECK(ct_math::lround(-std::numeric_limits<long double>::infinity()) ==  std::lround( -std::numeric_limits<long double>::infinity()) );
+        CHECK(ct_math::lround( std::numeric_limits<long double>::infinity()) ==  std::lround( std::numeric_limits<long double>::infinity()) );
+    }
+}

@@ -38,4 +38,16 @@ constexpr auto round(const T x) -> typename std::conditional<std::is_integral_v<
 {
     return round_operator::round_check( static_cast<typename std::conditional<std::is_integral_v<T>, double, T>::type>(x) );
 }
+
+template<typename T>
+constexpr auto lround(const T x) -> long int
+{
+    return static_cast<long int>(round(x));
+}
+
+template<typename T>
+constexpr auto llround(const T x) -> long long int
+{
+    return static_cast<long long int>(round(x));
+}
 #endif 
